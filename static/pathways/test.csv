@@ -1,0 +1,27 @@
+Pathway name;Coverage (%);Total Metabolites;Retrieved Metabolites
+Arginine biosynthesis;25.0;4;Urea
+ Purine metabolism;42.857142857142854;7;Urea,Glycine,ATP
+ Pyrimidine metabolism;33.33333333333333;3;Urea
+ Arginine and proline metabolism;25.0;4;Urea
+ Biotin metabolism;100.0;1;Urea
+ ABC transporters;2.564102564102564;39;Urea
+ Epithelial cell signaling in Helicobacter pylori infection;100.0;1;Urea
+Primary bile acid biosynthesis";100.0;1;Glycine
+ Glycine;50.0;2;Glycine
+ Neuroactive ligand-receptor interaction;10.0;10;ATP
+ Taste transduction;8.333333333333332;12;ATP
+ Synaptic vesicle cycle;33.33333333333333;3;ATP
+ Inflammatory mediator regulation of TRP channels;33.33333333333333;3;ATP
+ Pertussis;16.666666666666664;6;ATP
+ NOD-like receptor signaling pathway;50.0;2;ATP
+ Thermogenesis;33.33333333333333;3;ATP
+ Renin secretion;25.0;4;ATP
+ Parkinson disease;33.33333333333333;3;ATP
+Oxidative phosphorylation;33.33333333333333;3;ATP
+ Platelet activation;50.0;2;ATP
+ Calcium signaling pathway;100.0;1;ATP
+ Necroptosis;100.0;1;ATP
+ Insulin secretion;100.0;1;ATP
+ Prolactin signaling pathway;100.0;1;ATP
+ Type II diabetes mellitus;100.0;1;ATP
+ Hypertrophic cardiomyopathy;100.0;1;ATP

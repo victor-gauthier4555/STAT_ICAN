@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Plots XGBoost</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cssXG.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+        <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <style>
+            .plot {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="{{ url_for('site3') }}" class="bouton-retour">
+            <img src="{{ url_for('static', filename='css/images/IMAGE_RETOUR_4.png') }}" alt="Retour">
+        </a>
+
+        <section>
+            <div class = "entete">
+                <span class = "txt">STATICAN</span>
+
+            </div>
+        </section>
+
+
+
+        <div class="select-container">
+            <select id="plot-select" class="styled-select">
+                <option value="plot1">Importances des caractéristiques</option>
+                <option value="plot2">ROC Curve</option>
+                <option value="plot3">Matrice de Corrélation</option>
+                <option value="plot4">Résumé des valeurs SHAP</option>
+            </select>
+
+            <div id="plot1" class="plot">
+                <img src="data:image/png;base64,{{ plot_url4 }}" class="centered1">
+            </div>
+
+            <div id="plot2" class="plot">
+                <img src="data:image/png;base64,{{ plot_url1 }}" class="centered2">
+            </div>
+
+            <div id="plot3" class="plot">
+                <img src="data:image/png;base64,{{ plot_url2 }}" class="centered3">
+            </div>
+
+            <div id="plot4" class="plot">
+                <img src="data:image/png;base64,{{ plot_url3 }}" class="centered4">
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const select = document.getElementById('plot-select');
+                const plots = document.querySelectorAll('.plot');
+
+                function showPlot(selectedPlot) {
+                    plots.forEach(plot => {
+                        if (plot.id === selectedPlot) {
+                            plot.style.display = 'block';
+                        } else {
+                            plot.style.display = 'none';
+                        }
+                    });
+                }
+
+                select.addEventListener('change', function() {
+                    showPlot(this.value);
+                });
+
+                // Afficher le premier plot par défaut
+                showPlot(select.value);
+            });
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>STATICAN - Plot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+</head>
+<body>
+    <div id="loading-spinner" class="loader"></div>
+    <section>
+        <div class="entete">
+            <a href="{{ url_for('welcome') }}" class="gradient-link">
+                <span class="txt">STATICAN</span>
+                <span class="gradient"></span>
+                <span class="dodge"></span>
+            </a>
+        </div>
+        <div class="texte">
+            <h3>Generated Plot</h3>
+        </div>
+        <div class="plot-container">
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Generated Plot">
+        </div>
+        <div>
+            <a href="{{ url_for('choose') }}" class="button-19">Back</a>
+        </div>
+    </section>
+</body>
+</html>

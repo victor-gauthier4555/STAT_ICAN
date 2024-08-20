@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>STATICAN</title> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/table.css') }}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+        <script defer src="{{ url_for('static', filename='js/app2.js') }}"></script>
+
+	</head>
+
+	<body>
+        <div id="loading-spinner" class="loader"></div>
+        <section>
+            <div class = "entete">
+                <span class = "txt">STATICAN</span> 
+        		<span class = "gradient"></span>
+        		<span class = "dodge"></span>
+            </div>
+            <div class = "colonne">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Variable name </th>
+                      <th scope="col">P-Value</th>
+                    </tr>
+                  </thead>
+                  <tbody class = "table_body">
+                      <tr class = "significant">
+                              <th>Group</th>
+                              <td>0.006</td>
+                          </tr>
+                          <tr class = "significant">
+                              <th>SMOKE_FREQUENCY</th>
+                              <td>0.0</td>
+                          </tr>
+                          <tr>
+                                  <th>Urea</th>
+                                  <td>0.107</td>
+                              </tr>
+                              <tr>
+                                  <th>Glycine</th>
+                                  <td>0.717</td>
+                              </tr>
+                              <tr>
+                                  <th>Pyruvate</th>
+                                  <td>0.449</td>
+                              </tr>
+                              <tr>
+                                  <th>Lactate</th>
+                                  <td>0.07</td>
+                              </tr>
+                              <tr>
+                                  <th>Sarcosine</th>
+                                  <td>0.065</td>
+                              </tr>
+                              <tr>
+                                  <th>Alanine</th>
+                                  <td>0.531</td>
+                              </tr>
+                              <tr>
+                                  <th>2-HYDROXYPYRIDINE&isomer</th>
+                                  <td>0.974</td>
+                              </tr>
+                              <tr>
+                                  <th>G.aminobutyricacid&Isomers</th>
+                                  <td>0.429</td>
+                              </tr>
+                              <tr>
+                                  <th>N.N-dimethylglycine</th>
+                                  <td>0.693</td>
+                              </tr>
+                              <tr>
+                                  <th>Choline</th>
+                                  <td>0.177</td>
+                              </tr>
+                              <tr>
+                                  <th>Serine</th>
+                                  <td>0.669</td>
+                              </tr>
+                              <tr class = "significant">
+                              <th>DIETHANOLAMINE</th>
+                              <td>0.023</td>
+                          </tr>
+                          <tr>
+                                  <th>Hypotaurine</th>
+                                  <td>0.292</td>
+                              </tr>
+                              <tr>
+                                  <th>Uracil</th>
+                                  <td>0.199</td>
+                              </tr>
+                              <tr>
+                                  <th>Cytosine</th>
+                                  <td>0.194</td>
+                              </tr>
+                              <tr class = "significant">
+                              <th>HISTAMINE</th>
+                              <td>0.011</td>
+                          </tr>
+                          <tr>
+                                  <th>Diabety</th>
+                                  <td>1.0</td>
+                              </tr>
+                                           
+                   </table>
+    <div style="display: flex; flex-direction: column; justify-content : space-evenly; align-items : center ; ">
+        <div class = "rectangle" >
+            <div class = "choix">
+
+                <h3 style =  "color: gainsboro"> Import a list of  <span style="text-decoration: underline;"> maximum 3 variables </span> (more will induce overfitting) </h3>
+
+                <form action="{{ url_for('predict_multi') }}" class = "formulaire" method="POST" enctype="multipart/form-data" id = "processForm">
+                <div class="addfile">
+                    <label for="comments" style = "color : lightgray">Variables chosen (coma separated):</label>
+                    <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+                </div>
+
+                <h3 id = "boxappear" href ="#" class = "lien">Select reference for categorical variables</h3>
+
+            </div>
+            <div style = "display : flex ; align-items : center; text-align : center ; ">
+
+            <div class="adfile">
+                <label for="fileInput" class="fileLabel">             
+                    <a class="fileText">Or add a CSV file</a>          
+                    <input type="file" id="fileInput" name ="file">
+                </label>
+            </div>
+
+            </div>
+
+        </div>
+        <div class = "hidden", id = "messageBox">
+              <label for="variable">Group : </label>
+                            <select name=Group>
+ <option value="Malade">Malade</option> <option value="Controle">Controle</option></select><br> <label for="variable">SMOKE_FREQUENCY : </label>
+                            <select name=SMOKE_FREQUENCY>
+ <option value="5">5</option> <option value="4">4</option> <option value="3">3</option> <option value="1">1</option> <option value="2">2</option></select><br> <label for="variable">Diabety : </label>
+                            <select name=Diabety>
+ <option value="YES">YES</option> <option value="NO">NO</option></select><br><a id = "boxgone" class = "button19">OK</a>
+                   </div>
+                   <input type='submit' value="submit" class = "button21" id = "submit"/>
+        </form>
+    </div>
+            </section>
+
+
+        </body>
+    </html>

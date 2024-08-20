@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>STATICAN</title> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style5.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+        <script defer src = "{{ url_for('static', filename='js/app1.js') }}"></script>
+    </head>
+    <body>
+        <a href="{{ url_for('site3') }}" class="bouton-retour">
+            <img src="{{ url_for('static', filename='css/images/IMAGE_RETOUR_4.png') }}" alt="Retour">
+        </a>
+        <section> 
+            <div class = "entete">
+                <span class = "txt">STATICAN</span> 
+                <span class = "gradient"></span>
+                <span class = "dodge"></span>
+            </div> 
+            <div class = 'centre'>
+                <div class = 'images'><div class = "slide"> <img src = "{{ url_for('static', filename='images/Stimuli_PCA_1.png') }}" alt=""> </div><div class = "slide"> <img src = "{{ url_for('static', filename='images/Timepoints_PCA_2.png') }}" alt=""> </div><div class = "slide"> <img src = "{{ url_for('static', filename='images/Group_PCA_0.png') }}" alt=""> </div></div>
+                <div class="boutons"><a href="#" class="bouton0"></a> <a href="#" class="bouton1"></a> <a href="#" class="bouton2"></a> </div>
+            </div>
+        </section>
+    </body>
+</html>

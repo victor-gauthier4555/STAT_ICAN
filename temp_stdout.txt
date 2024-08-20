@@ -1,0 +1,13 @@
+#local storage saving 
+            if os.path.exists( os.path.join(f"C:/Users/Rose Tchala Sare/static", 'uploads')):
+                # If it exists, remove it and create a new one
+                shutil.rmtree( os.path.join(f"C:/Users/Rose Tchala Sare/static", 'uploads'))
+                os.makedirs( os.path.join(f"C:/Users/Rose Tchala Sare/static", 'uploads'))
+                print("Dossier upload bien crée")
+
+
+            else:
+                # If it doesn't exist, simply create a new one
+                os.makedirs( os.path.join(f"C:/Users/Rose Tchala Sare/static", 'uploads'))
+
+                print("Dossier upload bien crée")

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>STATICAN</title> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+        <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+	</head>
+    
+	
+	<body>
+        <a href="{{ url_for('choose') }}" class="bouton-retour">
+            <img src="{{ url_for('static', filename='css/images/IMAGE_RETOUR_4.png') }}" alt="Retour">
+        </a>
+        <div id="loading-spinner" class="loader"></div>
+        <section>
+            <div class = "entete">
+                <a href="{{ url_for('welcome') }}" class="gradient-link">
+                    <span class="txt">STATICAN</span>
+                    <span class="gradient"></span>
+                    <span class="dodge"></span>
+                </a>
+            </div>
+            <div class = "texte">
+                <h3>Upload your data to perform the analysis</h3>
+            </div>
+            <div>
+                <form action="{{ url_for('predictMV') }}" class = "formulaire" method="POST" enctype="multipart/form-data">
+                    <div class="ligne">
+
+                        <div class = "colonne">
+                            <div>
+                                <label for="name" class = 'texte1'>Study name/ID/code : </label>
+                                <input type="text" id="name" name="name">
+                            </div>
+                            <div>
+                                <label for="type" class = "texte1">Data format : </label>
+                                <select id = "data_format" name = "format">
+                                    <option>Samples in row</option>
+                                    <option>Samples in column</option>
+
+                                </select>
+                            </div>
+                            <div>
+                                <label for="type" class = "texte1"> Normalize values: </label>
+                                <select id = "data_format" name = "format">
+                                    <option>NO</option>
+                                    <option>YES</option>
+
+                                </select>
+                            </div>
+                            <div>
+                                <label for="name" class = 'texte1'> Label of outcome variable : </label>
+                                <input type="text" id="variableid" name="variableid">
+                            </div>
+                        </div>
+                    
+            
+                        <div class="container">
+                            <label for="fileInput" class="fileLabel">
+                            <div class="button-19">
+                                <span class="fileText">ADD FILE</span>
+                            </div>
+                            <input type="file" id="fileInput" name ="file" accept=".csv">
+                            </label>
+                        </div>
+                    
+                    </div>
+                    <div>
+                        <input type='submit' value="submit" class = "button-19" id = "submit"/>
+                    </div>
+                </form>
+
+            </div>
+
+            {% if message_erreur %}
+            <div class="error_message">
+                {{ message_erreur }}
+            </div>
+            {% endif %}
+
+    
+
+        </section>
+    </body>
+</html>

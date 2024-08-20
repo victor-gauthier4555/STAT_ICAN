@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>STATICAN</title> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style4.css') }}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+	</head>
+    <body>
+        <a href="{{ url_for('site3') }}" class="bouton-retour">
+            <img src="{{ url_for('static', filename='css/images/IMAGE_RETOUR_4.png') }}" alt="Retour">
+        </a>
+        <section>
+            <div class = "entete">
+                <span class = "txt">STATICAN</span> 
+        		<span class = "gradient"></span>
+        		<span class = "dodge"></span>
+            </div>
+            <div class = "ligne_boutons">
+                <form action="{{ url_for('foldchange') }}" class = "bouton" method="POST">
+                    <input type='submit' value="FOLD CHANGE" class = "button17" id = "display"/>
+                </form>
+                <form action="{{ url_for('volcanoplot') }}" class = "bouton" method="POST">
+                    <input type='submit' value="VOLCANO PLOT(S)" class = "button18" id = "display"/>
+                </form>
+                <form action="{{ url_for('PCA') }}" class = "bouton" method="POST">
+                    <input type='submit' value="PCA" class = "button19" id = "display"/>
+                </form>
+                <form action="{{ url_for('HEATMAP') }}" class = "bouton" method="POST">
+                    <input type='submit' value="HEATMAP(S)" class = "button20" id = "display"/>
+                </form>
+                <form action="{{ url_for('test') }}" class = "bouton" method="POST">
+                    <input type='submit' value="BOXPLOTS" class = "button21" id = "display"/>
+                </form>
+
+
+
+            </div>
+
+        </section>
+    </body>
+</html> 

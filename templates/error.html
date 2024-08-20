@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>STATICAN</title> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/table.css') }}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+	</head>
+    	
+	<body>
+        <div id="loading-spinner" class="loader"></div>
+        <section>
+            <div class = "entete">
+                <span class = "txt">STATICAN</span> 
+        		<span class = "gradient"></span>
+        		<span class = "dodge"></span>
+            </div>
+            {% if processing_sentence %}
+            <div class = "error_message">
+                <h3>{{ processing_sentence }}</h3>
+            </div>
+            {% endif %}
+            
+        </section>
+    </body>
+</html>
